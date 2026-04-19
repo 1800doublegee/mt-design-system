@@ -1,0 +1,60 @@
+/**
+ * Made Thought — Spacing & Geometry Tokens
+ *
+ * A fixed scale. Every spacing decision maps to a token.
+ * Consistent spacing is what makes the grid feel intentional.
+ */
+
+:root {
+  /* ─── Base spacing scale ──────────────────────────────────────────────── */
+  --space-0:  0px;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  16px;
+  --space-4:  24px;
+  --space-5:  32px;
+  --space-6:  48px;
+  --space-7:  60px;
+  --space-8:  80px;
+  --space-9:  120px;
+  --space-10: 160px;
+
+  /* ─── Slide geometry (1920×1080 canvas) ──────────────────────────────── */
+  --slide-width:         1920px;
+  --slide-height:        1080px;
+  --slide-padding-x:     60px;   /* Left/right slide margin */
+  --slide-padding-y:     60px;   /* Top/bottom slide margin */
+  --slide-content-width: 1800px; /* Width inside padding: 1920 - (60×2) */
+  --slide-gap-major:     80px;   /* Gap between major content sections */
+  --slide-gap-minor:     24px;   /* Gap between elements within a section */
+
+  /* ─── Footer geometry ────────────────────────────────────────────────── */
+  --footer-height: 14px;
+  --footer-width:  1800px;       /* FILL to content width */
+}
+
+/**
+ * Spacing usage guide:
+ *
+ * space-1 (4px)   → micro adjustments, icon padding
+ * space-2 (8px)   → tight internal padding (chips, tags)
+ * space-3 (16px)  → component internal padding
+ * space-4 (24px)  → slide-gap-minor; gap between elements in a group
+ * space-5 (32px)  → medium separation
+ * space-6 (48px)  → section-level separation on dense slides
+ * space-7 (60px)  → slide padding; matches slide-padding-x/y
+ * space-8 (80px)  → slide-gap-major; primary content block separation
+ * space-9 (120px) → generous vertical rhythm between large sections
+ * space-10 (160px)→ maximum breathing room; hero section margins
+ *
+ * Grid rule:
+ * All multi-column layouts use equal column widths with --slide-gap-minor (24px)
+ * between columns. Content always starts at x=60 and ends at x=1860.
+ *
+ * Column width formula for N columns:
+ * (1800 - (24 × (N-1))) / N
+ *
+ * 2 columns: 888px each
+ * 3 columns: 584px each
+ * 4 columns: 432px each
+ */

@@ -1,0 +1,86 @@
+<!--
+  Made Thought — L2 Element Kit: Typographic Expressions
+  These are reusable sub-slide elements. They slot INTO slides, not standalone.
+
+  6 components:
+  1. Stat Callout       — number (max 8 chars) + caption (max 160 chars)
+  2. Numbered Item      — number + title + optional body
+  3. Quote Block        — quote (max 220 chars) + attribution
+  4. Kicker Headline    — kicker label (eyebrow) + headline (display)
+  5. Pull Quote         — quote + author + optional role
+  6. Definition Pair    — term (eyebrow) + definition (body)
+-->
+
+<!-- 1. STAT CALLOUT -->
+<!-- Used in Stats template. 3-up. The number is the hero. -->
+<div class="element element--stat-callout">
+  <span class="text-display-mega">47%</span>
+  <span class="text-body" style="color: var(--color-ink-subtle); max-width: 400px;">
+    of luxury consumers cite brand distinctiveness as primary purchase driver
+  </span>
+</div>
+
+<!-- 2. NUMBERED ITEM -->
+<!-- Used in Text Intro template. Vertical list. -->
+<div class="element element--numbered-item">
+  <span class="text-display-m">01</span>
+  <div>
+    <p class="text-eyebrow">IDENTIFY</p>
+    <p class="text-body">The feeling before the framework. Start with atmosphere, not architecture.</p>
+  </div>
+</div>
+
+<!-- 3. QUOTE BLOCK -->
+<!-- Used in positioning and reference slides. -->
+<blockquote class="element element--quote-block">
+  <p class="text-display-m" style="font-style: italic;">
+    "The brands people choose when it matters are never the loudest. They are the most certain."
+  </p>
+  <footer class="text-eyebrow" style="margin-top: var(--space-5);">Nick Marshall, Made Thought</footer>
+</blockquote>
+
+<!-- 4. KICKER HEADLINE -->
+<!-- Eyebrow label + large display headline. Most versatile component. -->
+<div class="element element--kicker-headline">
+  <p class="text-eyebrow">DESIRE BY DESIGN</p>
+  <h2 class="text-display-xl">The feeling comes first.</h2>
+</div>
+
+<!-- 5. PULL QUOTE -->
+<!-- Quotes from clients, research, or internal voice. -->
+<div class="element element--pull-quote">
+  <p class="text-display-m" style="font-style: italic;">
+    "Made Thought is the partner that helps you do better thinking upstream."
+  </p>
+  <div style="margin-top: var(--space-5);">
+    <p class="text-eyebrow">WILL PEACOCK</p>
+    <p class="text-body" style="color: var(--color-ink-subtle);">Global Brand MD, Glenfiddich</p>
+  </div>
+</div>
+
+<!-- 6. DEFINITION PAIR -->
+<!-- Term + definition. Used in brand framework, glossary, or taxonomy slides. -->
+<div class="element element--definition-pair">
+  <p class="text-eyebrow">ATMOSPHERE</p>
+  <p class="text-body">
+    What does this brand feel like before you think about it? The emotional field the brand occupies — before messaging, before product, before the conscious mind arrives.
+  </p>
+</div>
+
+<style>
+.element {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.element--numbered-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--slide-gap-minor);
+  align-items: start;
+}
+.element--quote-block,
+.element--pull-quote {
+  max-width: 1200px;
+}
+</style>

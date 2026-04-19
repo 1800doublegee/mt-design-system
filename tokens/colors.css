@@ -1,0 +1,46 @@
+/**
+ * Made Thought — Colour Tokens
+ * Collection: MT/Tokens
+ * Modes: Light (default) | Dark
+ *
+ * Rule: MT's palette is black and white.
+ * Distinction comes from typography, layout, and restraint — not colour.
+ */
+
+:root,
+[data-theme="light"] {
+  /* Semantic surface */
+  --color-surface: #ffffff;        /* Slide background */
+  --color-ink: #000000;            /* Primary text, strokes, icons */
+  --color-ink-subtle: rgba(102, 102, 102, 0.4);  /* Secondary text, captions */
+  --color-divider: rgba(235, 235, 235, 0.92);    /* Card backgrounds, dividers, subtle rules */
+
+  /* Static palette — never theme-swapped */
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+}
+
+[data-theme="dark"] {
+  --color-surface: #000000;
+  --color-ink: #ffffff;
+  --color-ink-subtle: rgba(153, 153, 153, 0.6);
+  --color-divider: rgba(31, 31, 31, 0.12);
+
+  /* Static palette — unchanged in dark mode */
+  --palette-white: #ffffff;
+  --palette-black: #000000;
+}
+
+/**
+ * Usage guide:
+ *
+ * --color-surface     → slide/page background fill
+ * --color-ink         → all text, all strokes, all icons
+ * --color-ink-subtle  → secondary labels, captions, metadata
+ * --color-divider     → horizontal rules, card washes, grid cells
+ * --palette-white     → always white, regardless of theme (e.g. text on dark image)
+ * --palette-black     → always black, regardless of theme
+ *
+ * Never introduce additional colours without brand approval.
+ * The power of MT design comes from the absence of colour, not its presence.
+ */

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+  Made Thought — Slide Base Component
+  Canvas: 1920×1080px
+  Themes: Light (default) | Dark (data-theme="dark")
+
+  Every slide in the MT system is built on this shell.
+  It provides: correct dimensions, theme variable binding, footer, and content area.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1920">
+  <link rel="stylesheet" href="../tokens/colors.css">
+  <link rel="stylesheet" href="../tokens/typography.css">
+  <link rel="stylesheet" href="../tokens/spacing.css">
+  <link rel="stylesheet" href="slide-templates.css">
+  <title>MT Slide</title>
+</head>
+<body>
+
+<!-- ─── LIGHT SLIDE EXAMPLE ────────────────────────────────────────────── -->
+<div class="slide" data-theme="light">
+  <div class="slide__content">
+
+    <!-- Page title (optional — not on covers/dividers) -->
+    <div class="slide__page-title">PAGE TITLE</div>
+
+    <!-- Main content area — swap in any template pattern -->
+    <div class="slide__body">
+      <h1 class="text-display-xl">Headline goes here.</h1>
+      <p class="text-body">Body copy goes here. Futura PT Book 28pt. Line height 1.4. Max ~600px wide per column.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer — ALWAYS present. Never modify content. -->
+  <footer class="slide__footer">
+    <span class="text-footer">©2026 Made Thought</span>
+    <span class="text-footer">Private &amp; Confidential</span>
+  </footer>
+</div>
+
+
+<!-- ─── DARK SLIDE EXAMPLE ─────────────────────────────────────────────── -->
+<div class="slide" data-theme="dark">
+  <div class="slide__content slide__content--centered">
+
+    <!-- Display/Mega — used on covers and section dividers -->
+    <h1 class="text-display-mega">Chapter One.</h1>
+
+  </div>
+
+  <!-- Footer — ALWAYS present -->
+  <footer class="slide__footer">
+    <span class="text-footer">©2026 Made Thought</span>
+    <span class="text-footer">Private &amp; Confidential</span>
+  </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+/**
+ * Made Thought — Typography Tokens
+ *
+ * Two typefaces. Two registers. They never compete.
+ *
+ * Items MT Light (Colophon Foundry) — the emotional register
+ *   Used for: Display headlines, hero numbers, big ideas
+ *   Character: Elegant, considered, contemporary serif with humanist details
+ *   Weight: Light (300) only — weight comes from scale, not boldness
+ *
+ * Futura PT Book (Paratype) — the functional register
+ *   Used for: Eyebrows, body text, captions, labels, footers
+ *   Character: Geometric sans-serif, neutral, authoritative, European
+ *   Weight: Book (400) only — Demi used sparingly for UI labels only
+ */
+
+/* ─── Font face declarations ──────────────────────────────────────────────── */
+/* Add font files to assets/fonts/ and update src paths */
+
+@font-face {
+  font-family: 'Items MT';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/Items-MT-Light/ItemsMT-Light.otf') format('opentype'),
+       url('../assets/fonts/Items-MT-Light/ItemsMT-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/Futura-PT-Book/FuturaPT-Book.otf') format('opentype'),
+       url('../assets/fonts/Futura-PT-Book/FuturaPT-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/Futura-PT-Book/FuturaPT-Demi.otf') format('opentype'),
+       url('../assets/fonts/Futura-PT-Book/FuturaPT-Demi.woff2') format('woff2');
+}
+
+/* ─── Scale tokens ────────────────────────────────────────────────────────── */
+
+:root {
+  /* Items MT Light — Display hierarchy */
+  --font-display: 'Items MT', 'Georgia', serif;
+  --font-ui: 'Futura PT', 'Helvetica Neue', 'Arial', sans-serif;
+
+  --weight-light: 300;
+  --weight-book: 400;
+  --weight-demi: 600;
+
+  /* Slide type scale (1920×1080 canvas) */
+  --text-display-mega: 180px;   /* Hero numbers, mega stats, single word statements */
+  --text-display-xl: 68px;      /* Primary slide headline */
+  --text-display-m: 46px;       /* Secondary headline, section title */
+  --text-page-title: 22px;      /* PAGE TITLE label — uppercase, tracked */
+  --text-eyebrow: 22px;         /* EYEBROW LABEL — uppercase, tracked */
+  --text-body: 28px;            /* Body copy */
+  --text-footer: 12px;          /* Footer line — copyright + confidentiality */
+
+  /* Letter spacing */
+  --tracking-display: -0.01em;  /* Slight negative tracking for large display */
+  --tracking-ui: 0.08em;        /* Generous tracking for uppercase UI labels */
+  --tracking-body: 0;           /* No tracking on body */
+}
+
+/* ─── Utility classes ─────────────────────────────────────────────────────── */
+
+.text-display-mega {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--text-display-mega);
+  letter-spacing: var(--tracking-display);
+  line-height: 1;
+  color: var(--color-ink);
+}
+
+.text-display-xl {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--text-display-xl);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  color: var(--color-ink);
+}
+
+.text-display-m {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: var(--text-display-m);
+  letter-spacing: var(--tracking-display);
+  line-height: 1.1;
+  color: var(--color-ink);
+}
+
+.text-page-title {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-book);
+  font-size: var(--text-page-title);
+  letter-spacing: var(--tracking-ui);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.text-eyebrow {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-book);
+  font-size: var(--text-eyebrow);
+  letter-spacing: var(--tracking-ui);
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--color-ink);
+}
+
+.text-body {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-book);
+  font-size: var(--text-body);
+  letter-spacing: var(--tracking-body);
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+
+.text-footer {
+  font-family: var(--font-ui);
+  font-weight: var(--weight-book);
+  font-size: var(--text-footer);
+  letter-spacing: var(--tracking-ui);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-ink-subtle);
+}
+
+/**
+ * Typography rules:
+ *
+ * 1. Items MT Light is ONLY used at display scale (46px+). Never at body size.
+ * 2. Futura PT Book is ALWAYS uppercase with tracked spacing for labels/eyebrows.
+ * 3. The three-layer hierarchy is: EYEBROW (Futura) → Display headline (Items MT) → Body (Futura).
+ * 4. Never bold Items MT. Never use Items MT at body size.
+ * 5. Never use Futura for display headings.
+ * 6. Line length: body copy columns should not exceed 600px wide for readability.
+ */

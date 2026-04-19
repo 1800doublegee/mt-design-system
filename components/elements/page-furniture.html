@@ -1,0 +1,95 @@
+<!--
+  Made Thought — L2 Element Kit: Page Furniture
+  The structural elements that appear on every slide.
+
+  6 components:
+  1. Pagination        — current / total (e.g. "03 / 24")
+  2. Section Marker    — section label (e.g. "RESEARCH")
+  3. Running Head      — project name + section name (top of slide)
+  4. MT Logo Lockup    — Made Thought wordmark + optional descriptor
+  5. Bleed Bar         — full-width 4px rule at very top of slide
+  6. Divider Rule      — full-width 1px rule as content separator
+-->
+
+<!-- 1. PAGINATION -->
+<div class="element element--pagination">
+  <span class="text-footer">03</span>
+  <span class="text-footer" style="color: var(--color-ink-subtle);">&nbsp;/&nbsp;24</span>
+</div>
+
+<!-- 2. SECTION MARKER -->
+<!-- Appears in the page title position when slide is part of a section -->
+<div class="element element--section-marker">
+  <span class="text-eyebrow">RESEARCH</span>
+</div>
+
+<!-- 3. RUNNING HEAD -->
+<!-- Two-column header: project name left, section name right -->
+<header class="element element--running-head">
+  <span class="text-footer">GLENFIDDICH 2027 PLANNING</span>
+  <span class="text-footer">COMPETITIVE LANDSCAPE</span>
+</header>
+
+<!-- 4. MT LOGO LOCKUP -->
+<!-- Used on cover and end slides. SVG logo + optional descriptor. -->
+<div class="element element--logo-lockup">
+  <!-- Replace with actual SVG -->
+  <img src="../../assets/logos/mt-logo-primary.svg" alt="Made Thought" style="height: 32px;">
+  <!-- Optional descriptor — remove if not needed -->
+  <span class="text-footer">Brand Strategy &amp; Identity</span>
+</div>
+
+<!-- 5. BLEED BAR -->
+<!-- Full-width 4px rule at very top of slide — appears on select templates -->
+<div class="element element--bleed-bar" style="
+  width: 1920px;
+  height: 4px;
+  background: var(--color-ink);
+  position: absolute;
+  top: 0;
+  left: 0;
+"></div>
+
+<!-- 6. DIVIDER RULE -->
+<!-- 1px full-width horizontal rule between content sections -->
+<hr class="element element--divider-rule" style="
+  width: 100%;
+  height: 1px;
+  background: var(--color-ink);
+  border: none;
+  margin: 0;
+">
+
+<!-- ─── FOOTER (always present, standard) ──────────────────────────────────── -->
+<!--
+  The footer appears on EVERY slide without exception.
+  Content never changes. Never edit the copyright text.
+  Position: absolute bottom, full content width.
+-->
+<footer class="slide__footer" style="
+  width: var(--slide-content-width);
+  height: var(--footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+">
+  <span class="text-footer">©2026 Made Thought</span>
+  <span class="text-footer">Private &amp; Confidential</span>
+</footer>
+
+<style>
+.element--running-head {
+  display: flex;
+  justify-content: space-between;
+  width: var(--slide-content-width);
+}
+.element--logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.element--pagination {
+  display: flex;
+  align-items: baseline;
+}
+</style>

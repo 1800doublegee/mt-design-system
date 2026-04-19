@@ -1,0 +1,374 @@
+/**
+ * Made Thought — Slide Template System
+ * 33 template patterns. All built from the same tokens.
+ * Modularity is the point — every slide is an assembly, not a custom design.
+ */
+
+/* ─── Slide shell ─────────────────────────────────────────────────────────── */
+
+.slide {
+  position: relative;
+  width: var(--slide-width);
+  height: var(--slide-height);
+  background-color: var(--color-surface);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--slide-padding-y) var(--slide-padding-x);
+  box-sizing: border-box;
+}
+
+/* Content area — sits above the footer */
+.slide__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-gap-major);
+  width: var(--slide-content-width);
+}
+
+/* Centered content — used for section dividers and covers */
+.slide__content--centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Page title — uppercase Futura, sits at top-left */
+.slide__page-title {
+  font-family: var(--font-ui);
+  font-size: var(--text-page-title);
+  font-weight: var(--weight-book);
+  letter-spacing: var(--tracking-ui);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  flex-shrink: 0;
+}
+
+/* Footer — 1800px wide, 14px tall, space-between */
+.slide__footer {
+  width: var(--slide-content-width);
+  height: var(--footer-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+
+/* ─── TEMPLATE PATTERNS ───────────────────────────────────────────────────── */
+/* 33 templates. Organised: Light templates → Dark templates → Mixed templates */
+
+/* ─── 1. Big Title ────────────────────────────────────────────────────────── */
+/* PageTitle + Display/XL headline + 3-column body (eyebrow + text each) */
+.template-big-title .slide__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+  margin-bottom: var(--slide-gap-major);
+}
+.template-big-title .slide__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--slide-gap-minor);
+}
+
+/* ─── 2. Text Intro ───────────────────────────────────────────────────────── */
+/* Eyebrow + body + numbered list */
+.template-text-intro .slide__body-text {
+  max-width: 900px;
+}
+.template-text-intro .numbered-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-gap-minor);
+  margin-top: var(--slide-gap-major);
+}
+.template-text-intro .numbered-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: var(--slide-gap-minor);
+}
+
+/* ─── 3. 6-Card Grid ──────────────────────────────────────────────────────── */
+/* PageTitle + 3×2 numbered cards */
+.template-6-card-grid .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-6-card-grid .card {
+  background: var(--color-divider);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── 4. Stats ────────────────────────────────────────────────────────────── */
+/* PageTitle + Display/XL headline + 3 stat callouts */
+.template-stats .stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--slide-gap-minor);
+  align-items: end;
+}
+.template-stats .stat-number {
+  font-family: var(--font-display);
+  font-size: var(--text-display-mega);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+  line-height: 1;
+}
+.template-stats .stat-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  font-weight: var(--weight-book);
+  color: var(--color-ink);
+}
+
+/* ─── 5. 2×2 Matrix ──────────────────────────────────────────────────────── */
+/* PageTitle + Display/M title + 2×2 grid of cells */
+.template-2x2-matrix .matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-2x2-matrix .matrix-cell {
+  background: var(--color-divider);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── 6. Today–Tomorrow ──────────────────────────────────────────────────── */
+/* 2-column comparison with eyebrow headers */
+.template-today-tomorrow .columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-today-tomorrow .column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-gap-minor);
+  padding: var(--space-6);
+  background: var(--color-divider);
+}
+
+/* ─── 7. 4 Recommendations ───────────────────────────────────────────────── */
+/* 2×2 numbered cards */
+.template-4-recommendations .rec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-4-recommendations .rec-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--slide-gap-minor);
+  padding: var(--space-5);
+  background: var(--color-divider);
+}
+.template-4-recommendations .rec-number {
+  font-family: var(--font-display);
+  font-size: var(--text-display-m);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+}
+
+/* ─── 8. 3-Column Grid ───────────────────────────────────────────────────── */
+/* PageTitle + Display/M title + 3 equal columns */
+.template-3-col-grid .columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-3-col-grid .column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ─── 9. 4-Column Grid ───────────────────────────────────────────────────── */
+.template-4-col-grid .columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+
+/* ─── 10. Split Image + Copy ──────────────────────────────────────────────── */
+/* Image occupies left half, copy on right */
+.template-split-image-copy {
+  padding: 0;
+}
+.template-split-image-copy .split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+.template-split-image-copy .split__image {
+  background: var(--color-divider);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.template-split-image-copy .split__copy {
+  padding: var(--slide-padding-y) var(--slide-padding-x);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--slide-gap-major);
+}
+
+/* ─── 11. Positioning Statement ──────────────────────────────────────────── */
+/* Centred large quote, attribution below */
+.template-positioning-statement .slide__content {
+  justify-content: center;
+}
+.template-positioning-statement .quote {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+  max-width: 1400px;
+  text-align: center;
+  line-height: 1.1;
+}
+.template-positioning-statement .attribution {
+  font-family: var(--font-ui);
+  font-size: var(--text-body);
+  font-weight: var(--weight-book);
+  color: var(--color-ink-subtle);
+  text-align: center;
+  margin-top: var(--slide-gap-major);
+}
+
+/* ─── 12. Title + Body ───────────────────────────────────────────────────── */
+.template-title-body .headline {
+  font-family: var(--font-display);
+  font-size: var(--text-display-m);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+}
+.template-title-body .body {
+  max-width: 1200px;
+}
+
+/* ─── 13. Process Circles ────────────────────────────────────────────────── */
+/* Horizontal sequence of numbered steps */
+.template-process-circles .steps {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex: 1;
+}
+.template-process-circles .step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+.template-process-circles .step__circle {
+  width: 160px;
+  height: 160px;
+  border: 2px solid var(--color-ink);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.template-process-circles .step__connector {
+  flex: 0 0 var(--slide-gap-minor);
+  height: 2px;
+  background: var(--color-ink);
+}
+
+/* ─── 14. Brand Framework ────────────────────────────────────────────────── */
+/* Numbered pillars in a horizontal row */
+.template-brand-framework .pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--slide-gap-minor);
+  flex: 1;
+}
+.template-brand-framework .pillar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-ink);
+}
+
+/* ─── DARK TEMPLATES ─────────────────────────────────────────────────────── */
+
+/* ─── 15. Cover ──────────────────────────────────────────────────────────── */
+/* Dark. Centred. Logo + big display text. */
+.template-cover[data-theme="dark"] .slide__content {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─── 16. Section Divider ────────────────────────────────────────────────── */
+/* Dark. Display/Mega text centred or bottom-left. */
+.template-section-divider .divider-text {
+  font-family: var(--font-display);
+  font-size: var(--text-display-mega);
+  font-weight: var(--weight-light);
+  color: var(--color-ink);
+  line-height: 1;
+}
+.template-section-divider--centered .slide__content {
+  justify-content: center;
+  align-items: center;
+}
+.template-section-divider--bottom .slide__content {
+  justify-content: flex-end;
+}
+
+/* ─── 17. End Slide ──────────────────────────────────────────────────────── */
+/* Dark. "MADE THOUGHT" logotype centred. */
+.template-end-slide .slide__content {
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─── MIXED TEMPLATES ────────────────────────────────────────────────────── */
+
+/* ─── 18. Split Image + Copy (dark panel) ─────────────────────────────────── */
+/* Image left, dark panel right with white text */
+.template-persona-board .panel--dark {
+  background: var(--palette-black);
+  color: var(--palette-white);
+}
+
+/* ─── Divider rule ────────────────────────────────────────────────────────── */
+.divider-rule {
+  width: 100%;
+  height: 1px;
+  background: var(--color-ink);
+  flex-shrink: 0;
+}
+
+/* ─── Bleed bar ───────────────────────────────────────────────────────────── */
+.bleed-bar {
+  width: var(--slide-width);
+  height: 4px;
+  background: var(--color-ink);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
